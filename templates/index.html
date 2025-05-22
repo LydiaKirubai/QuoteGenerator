@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daily Motivation </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Get Your Daily Motivation</h1>
+    <p>Click the button to see a quote that inspires!</p>
+    <form action="/quote" method="post">
+        <button type="submit">Show Quote</button>
+    </form>
+    {% if quote %}
+        <div class="quote-box">
+            <p>"{{ quote }}"</p>
+        </div>
+    {% endif %}
+</body>
+</html>
